@@ -77,6 +77,7 @@ def openConnection(IP, PORT, isReading, outModules):
 							else:
 								# unknwon packet type, da fuq is this
 								exit()
+						pkt.data = pkt.data[pkt.trackable.size:] # otherwise RTTrPM gets fed the same module again and again!!		
 				elif (hex(pkt.fltHeader) == "0x4434" or hex(pkt.fltHeader) == "0x3444"): # TODO: Create the RTTrPL code that reads an RTTrPL packet
 					pkt = RTTrPL(pkt)
 					sock.close()
