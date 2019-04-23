@@ -2,7 +2,7 @@ import socket
 import binascii
 import struct
 import thirdParty_motion
-import thirdPart_lighting
+import thirdParty_lighting
 import traceback
 
 def openConnection(IP, PORT, isReading, outModules):
